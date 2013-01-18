@@ -45,11 +45,12 @@ require(['jquery'], function(template) {
 		.progress(function(progress){
 		})
 		.done(function(data) {
+			console.log(data);
 		 	var randomNumber=Math.floor(Math.random()*15)
 			var selectedTweetInfo = data.results[randomNumber];
 			var selectedTweetText = selectedTweetInfo.text;
 			var selectedTweetTransformed = replaceTwitterHandleWithLink(replaceUrlWithLink(selectedTweetText));	
-			$('.textbox p').html(selectedTweetTransformed);
+			$('.textbox .twitter_text').html(selectedTweetTransformed + "<div class='user_info'> -- " + selectedTweetInfo.from_user + "</div>");
 		
 		});
 	}());
