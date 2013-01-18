@@ -37,17 +37,14 @@ require(['jquery'], function(template) {
 
 		function replaceTwitterHandleWithLink(text) {
 			var handleExpression = /@(\w+)/g;
-			console.log(handleExpression);
 			return text.replace(handleExpression, "<a target='_blank' href='http://www.twitter.com/$1'>@$1</a>");
 				
 		}
 	
 		twitter.search('gratitude')
 		.progress(function(progress){
-			console.log(progress);
 		})
 		.done(function(data) {
-			console.log(data);
 		 	var randomNumber=Math.floor(Math.random()*15)
 			var selectedTweetInfo = data.results[randomNumber];
 			var selectedTweetText = selectedTweetInfo.text;
