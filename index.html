@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+    <title>hello-backbonejs</title>
+	<style type="text/css">
+      
+	  	.textbox{
+			background-color:#fff;
+			width:50%;	
+			margin:0px auto;
+			height:300px;
+			border-radius:15px;
+			text-align:center; 	
+			display:table;
+			padding:0px 15px;
+		}
+
+		.textbox p {
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center; 
+			font-size: 34px;
+			font-weight: bold;
+		}
+	  	
+		@media screen and (max-width : 980px) {
+
+			.textbox {
+				width: 90%;
+			}
+		
+		}
+
+		@media screen and (max-width: 480px) {
+			
+			.textbox {
+				width:100%;	
+			}
+		
+		}
+		
+		body {
+			background-color: #00BBF5;
+		}
+		
+		.test_box {
+			width: 100px;
+			height: 100px;
+			background: #CCC;
+			margin-bottom:25px;
+		}
+
+		.test_box.recommendations {
+			width: 500px;
+		}
+
+
+	</style>
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script data-main="js/main" src="js/require.js"></script>	
+
+</head>
+	<body>
+		<div id="main">
+			<div class="textbox"><p>here we go !</p></div>
+		</div>
+
+
+	</body>
+</html>
+
