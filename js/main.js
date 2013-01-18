@@ -40,6 +40,11 @@ require(['jquery'], function(template) {
 			return text.replace(handleExpression, "<a target='_blank' href='http://www.twitter.com/$1'>@$1</a>");
 				
 		}
+
+		function wrapTwitterHandle(text) {
+
+			return  "<a target='_blank' href='http://www.twitter.com/" + text + "'>@" + text +"</a>";
+		}
 	
 		twitter.search('gratitude')
 		.progress(function(progress){
@@ -50,7 +55,7 @@ require(['jquery'], function(template) {
 			var selectedTweetInfo = data.results[randomNumber];
 			var selectedTweetText = selectedTweetInfo.text;
 			var selectedTweetTransformed = replaceTwitterHandleWithLink(replaceUrlWithLink(selectedTweetText));	
-			$('.textbox .twitter_text').html(selectedTweetTransformed + "<div class='user_info'> -- " + selectedTweetInfo.from_user + "</div>");
+			$('.textbox .twitter_text').html(selectedTweetTransformed + "<div class='user_info'> -- " + wrapTwitterHandle(selectedTweetInfo.from_user) + "</div>");
 		
 		});
 	}());
